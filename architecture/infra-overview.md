@@ -29,12 +29,13 @@ architecture/diagrams/
 
 Each VM in this environment hosts a single major component to ensure isolation, easy debugging, and clean provisioning.
 ```
-VM Name	   Service	             Technology	           Purpose
-db01	     Database	             MySQL / MariaDB	     Stores persistent application data
-mc01	     Cache	               Memcached	           Provides caching layer for improved performance
-rmq01	     Message Broker	       RabbitMQ	             Handles background asynchronous tasks
-app01	     Application Server	   Tomcat 9	             Runs the VProfile WAR application
-web01	     Web Tier	             Nginx	               Acts as reverse proxy and entry point for users
+| VM Name | Service            | Technology      | Purpose                                         |
+| --------| ------------------ | --------------- | ----------------------------------------------- |
+| db01    | Database           | MySQL / MariaDB | Stores persistent application data              |
+| mc01    | Cache              | Memcached       | Provides caching layer for improved performance |
+| rmq01   | Message Broker     | RabbitMQ        | Handles background asynchronous tasks           |
+| app01   | Application Server | Tomcat 9        | Runs the VProfile WAR application               |
+| web01   | Web Tier           | Nginx           | Acts as reverse proxy and entry point for users |
 ```
 All services communicate via a host-only private network defined in the Vagrantfile.
 
@@ -45,19 +46,19 @@ Each VM is provisioned with a static private IP, enabling predictable service co
 Typical network flow:
 
 1. Users → web01 (Nginx)
-Nginx receives all traffic and proxies requests to the application server.
+   Nginx receives all traffic and proxies requests to the application server.
 
 2. web01 → app01 (Tomcat)
-Nginx forwards traffic to Tomcat via internal private IP on port 8080.
+   Nginx forwards traffic to Tomcat via internal private IP on port 8080.
 
 3. app01 → db01 / mc01 / rmq01
-Tomcat connects to:
+   Tomcat connects to:
 
-  > MySQL (db01) for persistent storage
+        > MySQL (db01) for persistent storage
 
-  > Memcached (mc01) for caching
+        > Memcached (mc01) for caching
 
-  > RabbitMQ (rmq01) for internal message queueing
+        > RabbitMQ (rmq01) for internal message queueing
 
 4. Internal Services
 These services communicate only over the private host-only network, ensuring isolation from the external host.
@@ -83,9 +84,9 @@ Provisioning follows a strict, dependency-driven sequence to ensure all upstream
 ```
 This sequence ensures:
 
-Tomcat does not start before MySQL, Memcached, and RabbitMQ are available
+* Tomcat does not start before MySQL, Memcached, and RabbitMQ are available
 
-Nginx routes traffic only after the application server is ready
+* Nginx routes traffic only after the application server is ready
 
 The diagram representing provisioning order is located in:
 ```
@@ -95,13 +96,13 @@ architecture/diagrams/vprofile_provisioning-order.png
 🤖 Automated Provisioning Overview 
 
 Automation for this environment is implemented using:
-```
+
 * Vagrant for VM orchestration
 
 * VirtualBox as the virtualization provider
 
 * Bash scripts for provisioning each VM
-```
+
 The automation replicates all manual setup steps, ensuring consistency across environment rebuilds.
 
 Structure:
@@ -118,15 +119,15 @@ automated-setup/
 ```
 The Vagrantfile defines:
 
-> VM names
+* VM names
 
-> Hostnames
+* Hostnames
 
-> IP addresses
+* IP addresses
 
-> Memory/CPU
+* Memory/CPU
 
-> Mapped provisioning scripts
+* Mapped provisioning scripts
 
 To bring up the entire environment:
 ```
@@ -137,12 +138,14 @@ vagrant up
 
 The following ports are used by services inside the environment:
 ```
-Service            Port          Description
-Nginx	              80	          Entry point for all user requests
-Tomcat	            8080	        Application server port
-MySQL/MariaDB	      3306	        Database communication
-Memcached	          11211	        Cache communication
-RabbitMQ 	          5672	        Message queue protocol
+| Service               | Port  | Description                       |
+| --------------------- | ----- | --------------------------------- |
+| Nginx                 | 80    | Entry point for all user requests |
+| Tomcat                | 8080  | Application server port           |
+| MySQL/MariaDB         | 3306  | Database communication            |
+| Memcached             | 11211 | Cache communication               |
+| RabbitMQ AMQP         | 5672  | Message queue protocol            |
+| RabbitMQ Admin UI     | 15672 | Web-based management console      |
 ```
 Port mapping details are documented separately in:
 ```
@@ -179,18 +182,19 @@ This Vagrant-based infrastructure is used for:
 ✔ Experimenting with automation techniques
 ```
 It serves as the foundation for future projects involving:
-```
-👉 Ansible provisioning
 
-👉 CI/CD automation
+* Ansible provisioning
 
-👉 Dockerization
+* CI/CD automation
 
-👉 Kubernetes deployments
+* Dockerization
 
-👉 Cloud infrastructure (Terraform + AWS)
-```
+* Kubernetes deployments
+
+* Cloud infrastructure (Terraform + AWS)
+
 
 🙌 Summary
 
 This infrastructure provides a cleanly separated, fully automated multi-VM environment suitable for both learning and demonstration purposes. By replicating a real-world application architecture locally, it enables hands-on experience with provisioning, service connectivity, troubleshooting, and automation workflows.
+
