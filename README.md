@@ -1,13 +1,14 @@
-VProfile Local Provisioning (Vagrant + Bash + VirtualBox)
+# VProfile Local Provisioning (Vagrant + Bash + VirtualBox)
 
 A fully reproducible local multi-VM DevOps environment for the VProfile application.
 This setup uses Vagrant, VirtualBox, and Bash provisioning scripts to automate the creation and configuration of all application tiers.
 
 This project recreates a complete multi-tier architecture entirely on your local machine—no cloud, no external services.
+
+---
+
+## 📌 Project Overview
 ```
-
-📌 Project Overview
-
 The VProfile application is a multi-tier Java web application composed of:
 
 | Tier                |   Technology            |
@@ -20,18 +21,15 @@ The VProfile application is a multi-tier Java web application composed of:
 ```
 This repository includes:
 
-Architecture diagrams
+* Architecture diagrams
+* Manual setup procedures for each VM
+* Automated provisioning using Vagrant + shell scripts
+* Service configuration examples
+* Sequence of provisioning (DB → Cache → MQ → App → Web)
 
-Manual setup procedures for each VM
+---
 
-Automated provisioning using Vagrant + shell scripts
-
-Service configuration examples
-
-Sequence of provisioning (DB → Cache → MQ → App → Web)
-
-
-🏗️ Architecture
+## 🏗️ Architecture
 
 Below is the logical architecture of the application stack:
 ```
@@ -55,11 +53,13 @@ Below is the logical architecture of the application stack:
 ```
 
 Full diagrams are available in:
-```bash
+```
 architecture/diagrams/
 ```
 
-📁 Repository Structure
+---
+
+## 📁 Repository Structure
 ```
 vprofile-local-provisioning/
 │
@@ -97,75 +97,59 @@ vprofile-local-provisioning/
 └── README.md
 ```
 
-🔧 Technologies Used
-```
-* Vagrant – VM orchestration
+---
 
-* VirtualBox – Hypervisor
+## 🔧 Technologies Used
 
-* Linux (CentOS / Ubuntu) – Base OS for VMs
+- Vagrant – VM orchestration
+- VirtualBox – Hypervisor
+- Linux (CentOS / Ubuntu) – Base OS for VMs
+- MariaDB / MySQL – Database
+- Memcached – Caching tier
+- RabbitMQ – Message broker
+- Tomcat 9 – Application server
+- Nginx – Reverse proxy
+- Bash – Automation scripts
+- Git – Version control
 
-* MariaDB / MySQL – Database
+---
 
-* Memcached – Caching tier
-
-* RabbitMQ – Message broker
-
-* Tomcat 9 – Application server
-
-* Nginx – Reverse proxy
-
-* Bash – Automation scripts
-
-* Git – Version control
-```
-
-🚀 Manual Provisioning Overview
+## 🚀 Manual Provisioning Overview
 
 This project includes step-by-step guides for setting up:
-```
-> MySQL / MariaDB
 
-> Memcached
+- MySQL / MariaDB
+- Memcached
+- RabbitMQ
+- Tomcat + Application Deployment
+- Nginx Reverse Proxy
 
-> RabbitMQ
 
-> Tomcat + Application Deployment
-
-> Nginx Reverse Proxy
-```
 Each step is fully documented in:
-```bash
+```
 manual-setup/
 ```
+---
 
-🤖 Automated Setup (Vagrant + Bash)
+## 🤖 Automated Setup (Vagrant + Bash)
 
 The automated provisioning replicates all manual steps using:
-```
-🔹 A multi-VM Vagrantfile
 
-🔹 Individual provisioning scripts for each service
+* A multi-VM Vagrantfile
+* Individual provisioning scripts for each service
+* Automatic hosts file management
+* Automatic network assignments
 
-🔹 Automatic hosts file management
-
-🔹 Automatic network assignments
-```
 Run the full environment:
 ```
 vagrant up
 ```
-
 This will create and configure the following VMs:
 ```
 db01 – Database
-
 mc01 – Memcached
-
 rmq01 – RabbitMQ
-
 app01 – Tomcat application server
-
 web01 – Nginx frontend
 ```
 Each machine runs its own provisioning script in:
@@ -177,7 +161,9 @@ If provisioning stops or fails, simply rerun:
 vagrant up
 ```
 
-📝 Screenshots
+---
+
+## 📝 Screenshots
 
 Environment verification screenshots can be stored here:
 ```
@@ -186,49 +172,38 @@ docs/screenshots/
 You can add screenshots of:
 ```
 MySQL running
-
 Memcached active
-
 RabbitMQ admin UI
-
 Tomcat application deployment
-
 Nginx reverse proxy
-
 Final application homepage
 ```
 
-🎯 Learning Outcomes
+---
+
+## 🎯 Learning Outcomes
 
 By completing this project, you will gain hands-on experience with:
-```
-Local multi-VM environments
 
-Infrastructure provisioning
+- Local multi-VM environments
+- Infrastructure provisioning
+- Bash automation
+- Linux service setup
+- Reverse proxy configuration
+- Application deployment
+- Debugging multi-tier systems
 
-Bash automation
-
-Linux service setup
-
-Reverse proxy configuration
-
-Application deployment
-
-Debugging multi-tier systems
-```
 This project forms the foundation for future DevOps automation using:
-```
-Ansible
 
-Terraform
+* Ansible
+* Terraform
+* Jenkins / CI-CD
+* AWS infrastructure
+* Containers & Kubernetes
 
-Jenkins / CI-CD
+---
 
-AWS infrastructure
-
-Containers & Kubernetes
-```
-🙌 Contributions
-```
+## 🙌 Contributions
 This repository is part of a personal DevOps learning journey.
+
 Feel free to fork and experiment.
