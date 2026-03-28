@@ -31,31 +31,7 @@ This repository includes:
 
 ## 🏗️ Architecture
 
-Below is the logical architecture of the application stack:
-```
-            Users
-              |
-       +--------------+
-       | Load Balancer|
-       +--------------+
-              |
-            Nginx
-              |
-         +----------+
-         |  Tomcat  |
-         +----------+
-            /    \
-           /      \
-   Memcached     RabbitMQ
-           \       /
-            \     /
-             MySQL
-```
-
-Full diagrams are available in:
-```
-architecture/diagrams/
-```
+![Architecture_diagram](architecture/diagrams/vprofile-architecture.png)
 
 ---
 
