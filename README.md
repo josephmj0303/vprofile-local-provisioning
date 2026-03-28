@@ -148,20 +148,21 @@ vagrant up
 ---
 
 ## 📝 Screenshots
+Environment verification screenshots:
+App-Login
+![app_login](docs/screenshots/app_login.png)
 
-Environment verification screenshots can be stored here:
-```
-docs/screenshots/
-```
-You can add screenshots of:
-```
-MySQL running
-Memcached active
-RabbitMQ admin UI
-Tomcat application deployment
-Nginx reverse proxy
-Final application homepage
-```
+App-Home
+![app_home](docs/screenshots/app_home.png)
+
+Cache-Miss
+![cache_miss](docs/screenshots/cache_miss.png)
+
+Cache-Hit
+![cache_hit](docs/screenshots/cache_hit.png)
+
+Rabbitmq-Initiated
+![rabbitmq_init](docs/screenshots/rabbitmq_init.png)
 
 ---
 
