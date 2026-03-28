@@ -1,4 +1,12 @@
 # VProfile Local Provisioning (Vagrant + Bash + VirtualBox)
+![Vagrant](https://img.shields.io/badge/Vagrant-1868F2?style=for-the-badge&logo=vagrant&logoColor=white)
+![VirtualBox](https://img.shields.io/badge/VirtualBox-183A61?style=for-the-badge&logo=virtualbox&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
+![Tomcat](https://img.shields.io/badge/Tomcat-F8DC75?style=for-the-badge&logo=apachetomcat&logoColor=black)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![RabbitMQ](https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white)
+![Memcached](https://img.shields.io/badge/Memcached-000000?style=for-the-badge&logo=memcached&logoColor=white)
 
 A fully reproducible local multi-VM DevOps environment for the VProfile application.
 This setup uses Vagrant, VirtualBox, and Bash provisioning scripts to automate the creation and configuration of all application tiers.
