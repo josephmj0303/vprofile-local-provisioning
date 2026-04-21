@@ -100,7 +100,7 @@ vprofile-local-provisioning/
 
 ## 🚀 Manual Provisioning Overview
 
-This project includes step-by-step guides for setting up:
+### This project includes step-by-step guides for setting up:
 
 - MySQL / MariaDB
 - Memcached
@@ -117,7 +117,7 @@ manual-setup/
 
 ## 🤖 Automated Setup (Vagrant + Bash)
 
-The automated provisioning replicates all manual steps using:
+### The automated provisioning replicates all manual steps using:
 
 * A multi-VM Vagrantfile
 * Individual provisioning scripts for each service
@@ -149,26 +149,26 @@ vagrant up
 
 ## 📝 Screenshots
 Environment verification screenshots:
-App-Login
+### App-Login
 ![app_login](docs/screenshots/app_login.png)
 
-App-Home
+### App-Home
 ![app_home](docs/screenshots/app_home.png)
 
-Cache-Miss
+### Cache-Miss
 ![cache_miss](docs/screenshots/cache_miss.png)
 
-Cache-Hit
+### Cache-Hit
 ![cache_hit](docs/screenshots/cache_hit.png)
 
-Rabbitmq-Initiated
+### Rabbitmq-Initiated
 ![rabbitmq_init](docs/screenshots/rabbitmq_init.png)
 
 ---
 
 ## 🎯 Learning Outcomes
 
-By completing this project, you will gain hands-on experience with:
+### By completing this project, you will gain hands-on experience with:
 
 - Local multi-VM environments
 - Infrastructure provisioning
@@ -178,7 +178,7 @@ By completing this project, you will gain hands-on experience with:
 - Application deployment
 - Debugging multi-tier systems
 
-This project forms the foundation for future DevOps automation using:
+### This project forms the foundation for future DevOps automation using:
 
 * Ansible
 * Terraform
