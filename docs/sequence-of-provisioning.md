@@ -1,4 +1,4 @@
-# Sequence of Provisioning
+# Sequence of Provisioning #
 
 This document explains the exact order in which the infrastructure components are provisioned, both in manual setup and automated Vagrant-based setup.
 

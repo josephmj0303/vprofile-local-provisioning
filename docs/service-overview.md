@@ -1,4 +1,4 @@
-# Service Overview
+# Service Overview #
 
 This document summarizes all major services in the VProfile application architecture, their purpose, and how they interact within the multi-tier setup.
 

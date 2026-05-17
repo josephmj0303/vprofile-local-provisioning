@@ -1,4 +1,4 @@
-# VM Details
+# VM Details #
 
 This document describes the virtual machines created through the Vagrantfile and the purpose of each VM within the VProfile architecture.
 
