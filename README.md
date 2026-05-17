@@ -16,7 +16,7 @@ This project recreates a complete multi-tier architecture entirely on your local
 ---
 
 ## 📌 Project Overview
-```
+
 The VProfile application is a multi-tier Java web application composed of:
 
 | Tier                |   Technology            |
@@ -26,7 +26,7 @@ The VProfile application is a multi-tier Java web application composed of:
 | Cache Tier          |   Memcached             |
 | Message Broker      |   RabbitMQ              |
 | Database            |   MySQL / MariaDB       |
-```
+
 This repository includes:
 
 * Architecture diagrams
